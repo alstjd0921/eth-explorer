@@ -7,6 +7,8 @@
     "windows": "SET DEBUG=eth-explorer:* & npm start",
     "linux": "DEBUG=eth-explorer:* npm start"
   },
+  "author": "alstjd0921",
+  "license": "MIT",
   "dependencies": {
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
