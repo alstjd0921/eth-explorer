@@ -1,3 +1,51 @@
-<h1><%= message %></h1>
+<!-- <h1><%= message %></h1>
 <h2><%= error.status %></h2>
-<pre><%= error.stack %></pre>
+<pre><%= error.stack %></pre> -->
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <% include head %>
+    <link
+      href="https://fonts.googleapis.com/css?family=Cabin:400,700"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:900"
+      rel="stylesheet"
+    />
+    <link type="text/css" rel="stylesheet" href="/stylesheets/error.css" />
+  </head>
+  <body>
+    <div id="notfound">
+      <div class="notfound">
+        <div class="notfound-404">
+          <h3>Oops! Something's Wrong!</h3>
+          <h1><span>E</span><span>R</span><span>R</span></h1>
+        </div>
+        <div class="card">
+          <div class="card-body" style="text-align: center;">
+            <h5 class="card-title">검색결과가 없습니다.</h5>
+            <p class="card-text">
+              <li>모든 단어의 철자가 정확한지 확인하세요</li>
+              <li>다른 검색어를 사용해 보세요</li>
+              <li>더 일반적인 검색어를 사용해 보세요</li>
+              <li>키워드 수를 줄여보세요.</li>
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <button
+            onclick="location.href='/'"
+            class="btn btn-dark my-2 my-sm-0"
+            type="submit"
+            style="font-weight: bold;"
+          >
+            Home
+          </button>
+        </div>
+      </div>
+    </div>
+    <% include bootstrap %>
+  </body>
+</html>
