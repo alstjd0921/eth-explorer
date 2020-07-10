@@ -1,0 +1,25 @@
+const express = require('express');
+const router = express.Router();
+const Web3 = require('web3');
+
+router.get('/:pageId', async function (req, res, next) {
+  web3 = new Web3(
+    new Web3.providers.HttpProvider(
+      'https://mainnet.infura.io/v3/16275c322c5a47ad8fd125cc110ff860'
+    )
+  );
+  let pageId = req.params.pageId;
+  let addrCheck = await web3.utils.isAddress(pageId);
+  if (addrCheck !== true) {
+    return res.render('error');
+  }
+  web3.eth.getBalance(pageId, function (err, wei) {
+    if (err) {
+      return res.redirect(`/error`);
+    }
+    let bal = web3.utils.fromWei(wei, 'ether');
+    return res.render('address', { address: pageId, bal });
+  });
+});
+
+module.exports = router;
