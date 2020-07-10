@@ -8,6 +8,7 @@ const indexRouter = require('./routes/index');
 const errRouter = require('./routes/error');
 const txRouter = require('./routes/tx');
 const addressRouter = require('./routes/address');
+const blockRouter = require('./routes/block');
 
 const app = express();
 
@@ -32,6 +33,7 @@ app.use('/', indexRouter);
 app.use('/error', errRouter);
 app.use('/tx', txRouter);
 app.use('/address', addressRouter);
+app.use('/block', blockRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

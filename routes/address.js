@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Web3 = require('web3');
 
-router.get('/:pageId', async function (req, res, next) {
+router.get('/:pageId', async function (req, res) {
   web3 = new Web3(
     new Web3.providers.HttpProvider(
       'https://mainnet.infura.io/v3/16275c322c5a47ad8fd125cc110ff860'
@@ -15,7 +15,7 @@ router.get('/:pageId', async function (req, res, next) {
   }
   web3.eth.getBalance(pageId, function (err, wei) {
     if (err) {
-      return res.redirect(`/error`);
+      return res.redirect('/error');
     }
     let bal = web3.utils.fromWei(wei, 'ether');
     return res.render('address', { address: pageId, bal });

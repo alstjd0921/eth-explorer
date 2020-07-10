@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 const express = require('express');
 const router = express.Router();
 const Web3 = require('web3');
@@ -25,11 +24,11 @@ router.get('/:pageId', async function (req, res) {
   });
 
   if (pageId < 1700000) {
-    txFee = 5000000000000000000;
+    txFee = 5000000000000000000n;
   } else if (pageId < 4230000) {
-    txFee = 3000000000000000000;
+    txFee = 3000000000000000000n;
   } else {
-    txFee = 2000000000000000000;
+    txFee = 2000000000000000000n;
   }
 
   await web3.eth.getBlock(pageId, false, async function (err, block) {

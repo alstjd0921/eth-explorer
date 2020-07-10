@@ -1,3 +1,5 @@
+const { off } = require("./app");
+
 module.exports = {
   env: {
     commonjs: true,
@@ -14,4 +16,9 @@ module.exports = {
     quotes: ['error', 'single'],
     semi: ['error', 'always'],
   },
+  overrides: {
+      rules: {
+          'no-undef': 'off',
+      }
+  }
 };
