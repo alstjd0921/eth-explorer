@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node ./bin/www",
     "windows": "SET DEBUG=eth-explorer:* & npm start",
-    "linux": "DEBUG=eth-explorer:* npm start"
+    "linux": "DEBUG=eth-explorer:* npm start",
+    "lint": "./node_modules/.bin/eslint **/*.js --fix"
   },
   "author": "alstjd0921",
   "license": "MIT",
@@ -17,5 +18,8 @@
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
     "web3": "^1.2.9"
+  },
+  "devDependencies": {
+    "eslint": "^7.4.0"
   }
 }
