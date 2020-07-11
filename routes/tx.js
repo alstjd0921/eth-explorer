@@ -10,7 +10,7 @@ const addComma = (num) => {
 router.get('/:pageId', async function (req, res, next) {
   web3 = new Web3(
     new Web3.providers.HttpProvider(
-      'https://mainnet.infura.io/v3/16275c322c5a47ad8fd125cc110ff860'
+      'https://ropsten.infura.io/v3/16275c322c5a47ad8fd125cc110ff860'
     )
   );
   let pageId = req.params.pageId;

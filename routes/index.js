@@ -35,7 +35,6 @@ const getLatesTxDetailInfo = async (txs, range = 5) => {
   let txDetails = [];
 
   for (let i = 0; i < range; ++i) {
-    // console.log(txs[i].length)
     if (txs[i]) {
       let tx = await web3.eth.getTransaction(txs[i]);
       txDetails.push(tx);
@@ -66,7 +65,7 @@ router.get('/', async function (req, res, next) {
   // web3 = web3Server.web3Ropsten;
   web3 = new Web3(
     new Web3.providers.HttpProvider(
-      'https://mainnet.infura.io/v3/16275c322c5a47ad8fd125cc110ff860'
+      'https://ropsten.infura.io/v3/16275c322c5a47ad8fd125cc110ff860'
     )
   );
   let maxCnt = 5;
@@ -87,7 +86,7 @@ router.post('/', async function (req, res, next) {
   let { address } = req.body;
   web3 = new Web3(
     new Web3.providers.HttpProvider(
-      'https://mainnet.infura.io/v3/16275c322c5a47ad8fd125cc110ff860'
+      'https://ropsten.infura.io/v3/16275c322c5a47ad8fd125cc110ff860'
     )
   );
   await web3.eth.getBlockNumber(function (err, rtn) {
